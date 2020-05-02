@@ -9,7 +9,8 @@ form.addEventListener('submit', (e) => {
     const loc = input.value
     document.getElementById('p1').innerHTML = "Loading..."
     document.getElementById('p2').innerHTML = ""
-    fetch('http://localhost:4000/weather?address=' + loc).then((response) => {
+        // fetch('http://localhost:4000/weather?address=' + loc).then((response) => {
+    fetch('/weather?address=' + loc).then((response) => {
         response.json().then((data) => {
             if (data.error) {
                 document.getElementById('p1').innerHTML = data.error
